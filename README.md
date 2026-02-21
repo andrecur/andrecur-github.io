@@ -30,5 +30,19 @@ Jueves 19/02/2026
 Aún no he tenido tiempo de ponerme con BCV, pero he creado el blog.
 Aquí estamos.
 
+# BCV
+Sábado 21/02/2026
+Hoy por fin toca ponerse en serio con los ejercicios de Basic Computer Vision. 
+Lanzé el BCV, conecté correctamente y pude comprobar que estaba recibiendo la imagen de la cámara sin problema. Primer paso superado✔️.
+Luego pasé a intentar modificar la imagen y visualizar el resultado en la GUI.
+
+## Conversión a escala de grises
+Seguí lo que indicaba la página de info de BCV y empecé por algo sencillo (al menos en teoría), que era convertir la imagen de la cámara a escala de grises usando `cv2.cvtColor`.
+La idea era confirmar que el pipeline funcionaba, modificar la imagen Y Mostrar el resultado en la GUI.
+
+Inicialmente intenté utilizar 'Frequency.tick()' para controlar el bucle, ya que aparecía en la pestaña de código por defecto. Sin embargo, al ejecutar el programa, la aplicación fallaba y monstraba el mensaje 'failed to run the application'.
+No podía ver el traceback porque la ventana  parecía estar intentando reconectarse, como si el contenedor no estuviera conectado. Aunque a mi me parecía que sí lo estaba. 
+Después de probar distintas opciones, eliminé el control de frecuencia ('Frequency.tick()').
+Al ejecutar el código sin esto,  el programa funcionó correctamente y pude visualizar la imagen en escala de gris en la ventana.
 
 
