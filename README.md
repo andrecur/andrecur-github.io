@@ -49,9 +49,28 @@ Al ejecutar el código sin esto,  el programa funcionó correctamente y pude vis
 Como paso siguiente la página sugiere de probar con operaciones morfológicas. Realicé varias operaciones sobre la imagen en escala de gris y el primer resultado fue tan divertido que estoy empezando a pasarmelo bien. 
 ![erosion1](https://github.com/user-attachments/assets/46944a94-486f-4667-b897-9fb3269edae5)
 
-Con erosion parecía un poco película de terror. 
-También después de aplicar cierre, que ya no tenía ojos ni boca ni boquetitos de la nariz. Que horror. 🤣 
+Con la erosion parecía un poco película de terror. 
+También después de aplicar cierre, que ya me quedé sin ojos, sin boca y sin agujeros de la nariz. Que horror. 🤣 
 ![closing7x7](https://github.com/user-attachments/assets/bdeba984-69c6-4e93-95a9-c7ce3c1feba9)
 
-Apliqué erosion, dilatación, abertura, cierre y gradientes también. Y repetí pero añadiendo una umbralización. Probé con un threshold clásico y luego con Otsu. El resultado de erosion sobre la imagen umbralizada es mucho más bonito, sin duda.
+Apliqué erosion, dilatación, abertura, cierre y gradientes morfológico. También repetí las pruebas añadiendo una umbralización previa. Probé primero con un threshold clásico y luego con Otsu. El resultado de la erosión sobre la imagen umbralizada es esteticamente más agradable, sin duda.
+
+Con estas operaciones estoy empezando a entender que no son solo efectos raros (como los que se usan para el filtro de la cámara del móvil), sino herramientas muy potentes para limpiar ruido y preparar la imagen para pasos posteriores.
+
+## Filtro de color
+En este paso las cosas ya no fueron tan sencillas y divertidas como antes; aquí sí me tocó pelearme un poco más. 
+La idea es implementar un filtro de color para detectar objetos utilizando su color como característica principal. Para esto, en lugar que trabajar en RGB (o mejor dicho, BGR en OpenCV), se convierte la imagen al espacio HSV. Este espacio facilita mucho la segmentación ya que H (el color - Hue) está separado de brillo e intensidad.
+
+1. Definí entonces un rango de valores correspondiente al color rojo (estoy bebiendo un té en una taza roja). Pero en realidad para el rojo fue necesario definir dos rango, ya que el rojo se encuentra en los extremos del círculo de tonos, por lo que aparece tanto al inicio como al final. Que buena elección de color...😒
+Después generé una máscara binaria combinando ambos rangos. Esta máscara convierta en blanco las zonas que cumplen con el rango de color seleccionado (verdadero) y en negro el resto (falso). Así, solo el objeto rojo queda aislado del resto de la imagen.
+Dado que la segmentación inicial suele contener ruido, apliqué operaciones morfológicas para limpiar imperfecciones y mejorar la detección.
+
+Por supuesto no funcionó bien a la primera: además del objeto, detectaba zonas de mi cara. Como dije: el rojo, elección acertadísima. 
+Tuve que ajustar los valores del rango aumentando un poco la saturación minima para hacer la detección más estricta. Tras varios intentos, finalmente conseguí aislar el  objeto.  
+
+<img width="810" height="722" alt="red_filter1" src="https://github.com/user-attachments/assets/1e2bf0c7-9a86-4d6b-9719-b83effb332f9" />
+
+
+2. Realicé una segunda prueba cambiando el color (quizás el azul sea más agradecido) y también el objeto a detectar, para observar cómo cambia la detección.
+
 
