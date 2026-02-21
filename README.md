@@ -47,6 +47,7 @@ Al ejecutar el código sin esto,  el programa funcionó correctamente y pude vis
 
 ## Operaciones morfológicas
 Como paso siguiente la página sugiere de probar con operaciones morfológicas. Realicé varias operaciones sobre la imagen en escala de gris y el primer resultado fue tan divertido que estoy empezando a pasarmelo bien. 
+
 ![erosion1](https://github.com/user-attachments/assets/46944a94-486f-4667-b897-9fb3269edae5)
 
 Con la erosion parecía un poco película de terror. 
