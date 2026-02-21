@@ -45,4 +45,9 @@ No podía ver el traceback porque la ventana  parecía estar intentando reconect
 Después de probar distintas opciones, eliminé el control de frecuencia ('Frequency.tick()').
 Al ejecutar el código sin esto,  el programa funcionó correctamente y pude visualizar la imagen en escala de gris en la ventana.
 
+## Operaciones morfológicas
+Como paso siguiente la página sugiere de probar con operaciones morfológicas. Realicé varias operaciones sobre la imagen en escala de gris y el primer resultado fue tan divertido que estoy empezando a pasarmelo bien. 
+![erosion1](https://github.com/user-attachments/assets/46944a94-486f-4667-b897-9fb3269edae5)
+Con erosion parecía un poco película de terror. También después de aplicar cierre, que ya no tenía ojos ni boca ni boquetitos de la nariz. Que horror. 🤣 
+Apliqué erosion, dilatación, abertura, cierre y gradientes también. Y repetí pero añadiendo una umbralización. Probé con un threshold clásico y luego con Otsu. El resultado de erosion sobre la imagen umbralizada es mucho más bonito, sin duda.
 
