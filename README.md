@@ -76,9 +76,11 @@ Tuve que ajustar los valores del rango aumentando un poco la saturación minima 
 2. Realicé una segunda prueba cambiando el color (quizás el azul sea más agradecido) y también el objeto a detectar, para observar cómo cambia la detección.
 Soy muy lista, porque mi sudadera aparece azul oscuro en la cámara (aunque en realidad es morada, pero la luz y la resolución de la cámara del pc la rinden de otro tono), así que además de la botella detecta la manga de mi sudadera 😆.
 <img width="846" height="712" alt="image" src="https://github.com/user-attachments/assets/da50b97c-d25b-4622-a51d-5eea85f2ceee" />
+
 Bueno... yo diría que funciona.
 Compruebo quitandome la sudadera:
 <img width="777" height="543" alt="image" src="https://github.com/user-attachments/assets/baaaafd0-97f0-47b2-8a63-d35e2160901a" />
+
 Lo damos por bueno, ¿sí?
 
 
