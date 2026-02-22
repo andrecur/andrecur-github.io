@@ -84,6 +84,32 @@ Para comprobarlo, me quito la sudadera:
 
 Lo damos por bueno, ¿sí?
 
+## Detección de bordes
+Domingo 22/02/2026
+
+Hoy he retomado el proyecto, tarde por la tarde. Me gustaría dedicarle mucho más tiempo pero tuve que avanzar en otras cosas además de preparar todo para la semana que va a empezar.. Pero sí que me he dado cuenta de que necesito ir un poco más deprisa si quiero empezar la práctica “de verdad” a tiempo, así que vamos adelante.
+
+Esta vez apliqué filtros de detección de bordes. Probé con Canny y con Laplace, y la verdad... están guapísimos! Me encanta esa visualización basada solo en los bordes, es como ver solo la estructura esencial.
+Canny devuelve un resultado limpio y definido, mientras que Laplace genera un efecto más "artístico", está especialmente bonito: resalta muchísimo los contrastes y le da un aspecto muy potente a la imagen.
+
+## Convolución
+Después probé aplicar convolución utilizando filtros de distintos tamaños: 3x3, 5x5 y 7x7. Pude ver cómo cambia el resultado dependiendo del tamaño del kernel: con 3x3 el efecto es más sutil y conserva más detalle, a medida que aumento a 5x5 y 7x7, la imagen se suaviza más y pierde más información fina. Pero, aun así, sigo pensando que me gustaba más la detección de bordes.. 
+Lo que me llevo de aquí es que el tamaño del filtro no es un detalle sino una decisión que afecta directamente al equilibrio entre detalle y suavizado.
+
+Y ahora toca algo que parece bastante más “serio”: optical flow.
+
+Pero wow... viendo el tutorial es una pasada! Así que me pongo enseguida a ver como se hace.
+
+## Optical flow
+Confirmo: optical flow es una pasada. Cuando muevo la mano, aparecen colores donde hay movimiento. Por lo que he entendido, cada color es una dirección distinta, y cuanto más brillante es la zona, mayor es la velocidad. Si me quedo quieta, la imagen se vuelve prácticamente negra.
+
+Eso sí, no se ve tan perfecto como en el tutorial. No aparecen líneas claras, veo más bien manchas o blobs de color que se mueven y cambian. Al principio pensé que algo estaba mal, pero en realidad he visto que es normal ya que estoy usando el método de flujo óptico denso, que calcula el movimiento en todos los píxeles (por eso la visualización es más "continua"). Es que se me pasó por alto la primera opción que aparece en la documentación de OpenCV, el método de Lucas-Kanade, que es un flujo óptico disperso. Por lo que leo ese trabaja solo con puntos característicos y dibuja vectores más definidos. Lo voy a probar ahora mismo, seguro que esto es el de las líneas.
+
+Con el método de Lucas-Kanade, la visualización cambia completamente: ahora me veo y aparecen líneas que siguen puntos de la imagen. Es muy curioso ver cómo se dibujan trayectorias en tiempo real. Estaría guay conseguir que se dibujaran solo las que deberían de dibujarse de verdad, y no muchas que parecen moverse al azar, eheh. Estuve cambiando configuraciones para mejorarlo, en una de ellas incluso conseguí que siguiera el movimiento de un solo dedo, dibujando con bastante precisión. Pero duró poco 😆.
+Todavía no lo domino del todo. He estado modificando parámetros (detección de esquinas y tamaño de la ventana de búsqueda) y el comportamiento cambia según los ajustes; a veces detecta demasiados puntos y es un caos total, otras veces aparecen líneas en objetos que están quietos y se quedan dibujadas aunque no haya movimiento real.
+
+Todavía tengo que afinarlo, pero lo dejo aquí por hoy. Mañana (o cuando me dé tiempo) lo revisaré con la cabeza más fresca.
+
 
 
 
