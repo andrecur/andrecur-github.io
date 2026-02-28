@@ -126,12 +126,12 @@ Eheh, algo no funciona. Bueno, claro. Si no configuro nada más, esto no puede f
 
 Segundo objteivo: que el coche avance. 
 Claro, arranqué la práctica pero no el coche.
-Tendría que ir recto, pero en la práctic, estando aún mal orientado no ve la línea roja y no hace nada. Reinicio estratégico. Seguimos.
+Tendría que ir recto, pero en la práctica, estando aún mal orientado no ve la línea roja y no hace nada. Pues nada, reinicio y sigo.
 
 ## Detectar la línea roja
 Vale, sé que tiene que detectar esa línea roja. En teoría lo sé hacer, confiamos.
 
-Entonces, convertimos la imagen a HSV, definimos los dos rangos de rojo (sí, ya vimos que el rojo en HSV es especialito). creamos la máscara, limpiamos ruido con operaciones morfológicas, y en teoría listo. Le doy al play... 🎉Iuppiii!Detecta la línea roja! 
+Entonces, convertimos la imagen a HSV, definimos los dos rangos de rojo (sí, ya vimos que el rojo en HSV es especialito). Creamos la máscara, limpiamos ruido con operaciones morfológicas, y en teoría listo. Le doy al play... 🎉Iuppiii! Detecta la línea roja! 
 O eso parecía.. 
 
 Primera curva: tragedia. El coche sigue recto como si no supiera que no se tiene que chocar contra la pared (efectivamente, el coche aún no sabe que no tiene que chocar contra la pared 😅).
@@ -140,7 +140,60 @@ Maravilloso.
 
 Menos mal que no estoy conduciendo de verdad (y que conste que conduzco muy bien y me encanta). Pero aquí la misión es que el coche automático no se estrelle. Y claramente aún no estamos ahí.
 
-Resumiendo: el cohe ve el rojo, pero no sabe que hacer con ello. Creo que aquí empieza oficialmente mi relación con el famoso PID.
+Resumiendo: el coche ve el rojo, pero no sabe que hacer con ello. Creo que aquí empieza oficialmente mi relación con el famoso PID.
+
+## Valores PID
+Sabado 28/02/2026
+Vale, ya tengo la línea roja detectada. Ahora necesito que el coche haga algo inteligente con eso. Y es aquí donde tengo que introducir el famoso error.
+
+Para hacer el seguimiento de la línea necesito saber dónde está la línea respecto al coche, y eso significa calcular su centroide. Voy a calcularlo directamente como la media de los píxeles blancos: tengo una región blanca (la máscara del rojo), y lo único que necesito es su centro horizontal. Así que calculo la media horizontal de los píxeles blancos. 
+Con eso ya puedo calcular el error: centro de la línea menos el centro ideal (w/2); y ese error es el que meto en el controlador proporcional. Le pongo un circulo verde para visualizar en la línea dónde cree el coche que está la línea (veo lo que sigue el coche).
+
+Le añado la constante Kp, que multiplica el error para corregir proporcionalmente la trayectoria del coche. Y entonces... Empieza a reaccionar (por fin)! 🤩
+
+Pero claro, no me esperaba de acertar a la primera. Y efectivamente. Ahora curva un poco, pero pierde la linea, corrige tarde, vuelve a ver la linea y ahora se pasa; lo guay es que ha pasado la primera curva, y ahora se estampa a la siguente!
+
+Pero mira, hemos pasado de recorrer un 11% del circuito a llegar a un 20%.  A trompicones eheh, pero oye, vamos avanzando.
+Ahora habrá que hacerlo estable, a ver cuanto tardo 😆.
+
+## Ajustando valores
+Primero bajo la velocidad, porque creo que lo estoy haciendo ir demasiado rápido para que pueda reaccionar bien. Y oye, que guay! Solo con bajar la velocidad veo que el controlador P empieza a funcionar de verdad.
+
+Conseguí dar una vuelta entera sin estrellarmeee!👏🏻👏🏻 Que feliz estoy!!! Esi sí, tengo que avisar que si alguien sufre de mal de mar, mejor que no mire mi resultado actual, porque en las curvas oscila bastante, ahahah. Pero en los tramos rectos va perfecto. Y sinceramente, me sorprende bastante haber llegado hasta aquí en pocos pasos.
+
+Entonces vamos a afinar! 
+
+## Añadir término derivativo (D)
+Resumiendo, en recta el error es pequeño, así que la corrección también es pequeña; el sistema es estable y el coche avanza bien. En cambio, en curva el error aumenta, usando solo el P la corrección se vuelve grande, así que se pasa hacía el otro lado, vuelve a corregir y se vuelve a pasar; uff, oscilación constante en curva..  
+
+Como estabamos con controlador proporcional puro, llegó el momento de añadir el término derivativo D. Hemos visto que lo que hace D es no solo mirar cuanto error tenemos, sino también mirar que tan rápido está cambiando el error: de esta forma, si el error está creciendo mucho, frena la correccion y 'amortigua' ese cambio brusco que percibimos ahora con solo P.
+
+Mmm.. En teoría parecía la solución perfecta. En la práctica... bueno 😅 
+
+Con los primeros valores que probé, el coche seguía oscilando. Quizás algo menos, pero claramente no era suficiente. Así que empezó la fase intensa de tuning: tocar velocidad, Kp, Kd,... probar, observar, ajustar, repetir.
+
+Además, recordé que el profesor comentó que la cámara en el coche no es exactamente frontal, sino un poco desplazada hacia la izquierda. Eso significa que el cálculo del centro ideal de la imagen no es exactamente w/2. Añadí un pequeño offset en el cálculo del error, y efectivamente, el comportamiento cambiaba. Lo que faltaba... otro parámetro más para ajustar 😅
+
+La verdad es que esta fase de afinado está siendo mucho más larga de lo que imaginaba.
+La primera curva, que es en U hacia la derecha, sigue sin salir perfecta. La siguiente, hacia la izquierda, la hace casi impecable. Y luego llega una curva grande hacia la derecha donde vuelve a dar volantazos.
+
+Me da a mi que el sistema no es completamente simétrico, así que sigo hilando todavía más fino.
+
+## Ya lo tengo?
+Después de unos cuantos ajustes de configuración (y unas cuantas pruebas), por fin el coche empieza a comportarse bastante bien. Estable en rectas, razonable en curvas, y con menos oscilaciones que antes. Tuve que añadir una pequeña compensación para el giro hacia la derecha, porque resultaba más inestable que el izquierdo. Al final, los sistemas reales no son perfectamente simétricos, y parte del trabajo es adaptarse a eso.
+
+Y cuando por fin estaba contenta... Redoble de tambores 🥁
+Acabo de enterarme de que el coche debería tardar 2.5 minutos en dar la vuelta completa.
+
+Mis actuales 299.75 segundos (yo tan orgullosa de haber bajado de 300 😭) no se parecen demasiado a 2.5 minutos.
+
+Así que ahora empieza otra fase, la de aumentar poco a poco la velocidad sin romper el equilibrio que tanto me ha costado encontrar.
+Más horas de ajuste.
+Más pruebas.
+Más aprendizaje.
+
+Veremos si consigo acercarme a esos 2.5 minutos... pero al menos ahora siento que tenga un poco más de controo sobre el sistema.
+
 
 
 
