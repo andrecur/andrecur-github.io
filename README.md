@@ -194,6 +194,12 @@ Más aprendizaje.
 
 Veremos si consigo acercarme a esos 2.5 minutos... pero al menos ahora siento que tenga un poco más de controo sobre el sistema.
 
+## Ajustes finales (o no..)
+Vamos!!! He conseguido terminar la vuelta en 167.30 segundos! Esto si que se acerca mucho más a 2.5 minutos, (que son 150 segundo, se comparan mejor así, ¿no? 😆).
+Pero hay un pero (y quizás más de uno..): que en la curva grande y larga hacia la derecha el término D (creo que sea él) provoca bandazos fuertes. Uff, seguimos ajustando.
+Mejor tiempo: 156.96. Pero hay que ajustar un poco más.
+Hoy no puedo más.
+
 
 
 
