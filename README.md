@@ -110,6 +110,35 @@ Todavía no lo domino del todo. He estado modificando parámetros (detección de
 
 Todavía tengo que afinarlo, pero lo dejo aquí por hoy. Mañana (o cuando me dé tiempo) lo revisaré con la cabeza más fresca.
 
+# Práctica 1
+Miercoles 25/02/2025
+ 
+Hoy es el día, empezamos la práctica. 
+Sí, lo sé... aún no he terminado el flujo óptico y un par de cosas del BCV.
+Pero en dos semanas hay entrega, así que: a darle caña.
+Objetivo de la práctica: programar un coche de Fórmula1 (me encanta la F1), equipado con una cámara frontal, para que recorra un circuito de carreras que tiene una línea roja en el medio de la pista.
+
+## Arranca la práctica
+Primer objetivo específico: activar la cámara. Sé hacerlo, de hecho tengo éxito: veo la línea roja, bien. Vamos!
+Le pongo valores a la velocidad lineas y a la angular... y el coche entpnces decide de girarse a la derecha y contemplar el césped eternamente, probablemente le gusta más que la línea roja (a mi también me gusta más el verde).
+Eheh, algo no funciona. Bueno, claro. Si no configuro nada más, esto no puede funcioar por arte de magia.
+Segundo objteivo: que el coche avance. 
+Claro, arranqué la práctica pero no el coche.
+Tendría que ir recto, pero en la práctic, estando aún mal orientado no ve la línea roja y no hace nada. Reinicio estratégico. Seguimos.
+
+## Detectar la línea roja
+Vale, sé que tiene que detectar esa línea roja. En teoría lo sé hacer, confiamos.
+Entonces, convertimos la imagen a HSV, definimos los dos rangos de rojo (sí, ya vimos que el rojo en HSV es especialito). creamos la máscara, limpiamos ruido con operaciones morfológicas, y en teoría listo. Le doy al play... 🎉Iuppiii!Detecta la línea roja! 
+O eso parecía.. 
+Primera curva: tragedia. El coche sigue recto como si no supiera que no se tiene que chocar contra la pared (efectivamente, el coche aún no sabe que no tiene que chocar contra la pared 😅).
+Ya me lo imaginaba. 🤣 La curva la hace, sí. Pero la hace gracias a la pared. Y cuando se acaba la pared: termina recto en el césped.
+Maravilloso.
+Menos mal que no estoy conduciendo de verdad (y que conste que conduzco muy bien y me encanta). Pero aquí la misión es que el coche automático no se estrelle. Y claramente aún no estamos ahí.
+Resumiendo: el cohe ve el rojo, pero no sabe que hacer con ello. Creo que aquí empieza oficialmente mi relación con el famoso PID.
+
+
+
+
 
 
 
