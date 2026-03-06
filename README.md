@@ -200,10 +200,19 @@ Pero hay un pero (y quizás más de uno..): que en la curva grande y larga hacia
 Mejor tiempo: 156.96. Pero hay que ajustar un poco más.
 Hoy no puedo más.
 
+## Seguimos
+Miercoles 04/03/2026
+En clase comentamos nuestro respectivos estado de la práctica (un poco desastre en mi caso 🥲). Y además del PD para la velocidad, oigo que están comentando que podría configurar incluso dos escenarios, el de curva y el de recta. Pero piano, piano... vamos un paso a la vez.
+Empiezo a añadir Kp y Kd también a la velocidad, porque hasta ahora solo estaba controlando "bien" el giro, pero el robot seguía yendo a toda pastilla aunque estuviera entrando en una curva. Así que claro, luego le pedía que corrigiera y aquello era una fiesta de bandazos.
 
+Así que venga, a probar combinaciones: sube Kp, baja Kp, vamos con Kd, baja de nuevo Kd. Ahora gira demasiado. Ahora no gira bien. Pero me fijo que sí controlo la velocidad. Ahora parece que va mejor... ah no, espera, se acaba de ir de nuevo con sus oscilaciones.
 
+Después de un rato de este maravilloso proceso científico (también conocido como prueba-error-desesperación) consigo algo bastante decente. No es perfecto, pero wow! El tiempo de vuelta baja a unos 2 minutos (126.17 que ilusión!!!), que ya es una mejora bastante grande respecto al principio.
 
+En ese momento me vuelvo valiente y me lanzo a intentar tener dos escenarios distintos, uno para recta y otro para curva, con parámetros diferentes. Y pienso: bueno, qué puede salir mal... La idea parecía sencilla: detectar cuándo estoy en curva y aplicar un control más agresivo, y cuando estoy en recta suavizarlo para evitar oscilaciones. Ok, vamos, implementamos... y adivina? Lo he rotooo!! El robot ahora decide que la línea está en el otro lado y se gira justo al lado contrario de donde debería. Maravilloso.
 
+Después de varios intentos de arreglarlo y de ver que cada vez hacía cosas más raras, tomo una decisión muy sensata desde el punto de vista de la salud mental y nerviosa: quitarlo por ahora. 
+Mi conclusión fue: primero voy a dejar bien ajustado el control con un único escenario, y cuando eso esté más sólido volveré a intentar lo de distinguir entre rectas y curvas. Porque claramente el robot todavía tiene suficientes maneras de sabotearme sin necesidad de añadirle más lógica. Empiezo a pensar que no le gusto mucho :-(.
 
 
 
