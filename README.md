@@ -214,5 +214,25 @@ En ese momento me vuelvo valiente y me lanzo a intentar tener dos escenarios dis
 Después de varios intentos de arreglarlo y de ver que cada vez hacía cosas más raras, tomo una decisión muy sensata desde el punto de vista de la salud mental y nerviosa: quitarlo por ahora. 
 Mi conclusión fue: primero voy a dejar bien ajustado el control con un único escenario, y cuando eso esté más sólido volveré a intentar lo de distinguir entre rectas y curvas. Porque claramente el robot todavía tiene suficientes maneras de sabotearme sin necesidad de añadirle más lógica. Empiezo a pensar que no le gusto mucho :-(.
 
+## La entrega se acerca
+Sabado 07/03/2026
+Ayer estuve ajustando y tuneando los parámetros. Le dediqué el poco tiemnpo que he podido, pero la verdad es que fue un poco frustrante porque parecía no llegar nunca a algo que funcionara realmente bien. Probaba ajustes, cambiaba valores... y siempre había alguna parte del circuito donde algo fallaba.
+
+Pero después de unos cuantos ajustes más, bueno… creo haber alcanzado un cierto equilibrio en mis parámetros. O por lo menos, creo haber llegado al máximo equilibrio posible en mi código con los parámetros que tengo ahora mismo. Así que, por el momento, poco más voy a tocar. 
+
+Hoy quiero probarlo en otros circuitos. Qué chulo el de Montreal! Vamos con ese.
+
+Y sorpresa! Parece que está funcionando sorprendentemente bien en el primer tramo. Otra sorpresa es ver que realmente va lentísimo (estoy viendo que el tiempo en el simulador corre despacísimo)... llevo 10 minutos de tiempo real y solo 1 minuto de simulación 😅. 
+Pero aun así estoy bastante contenta, porque sinceramente esperaba que se saliera en la primera curva. Y no. Está aguantando!
+
+Llevo un 38% del circuito, y ni tan mal.
+Bueno... a veces oscila, sí. Pero de verdad me esperaba una reacción mucho peor.
+
+Por cierto, el circuito de Montreal mide 4.361 km, y la vuelta rápida la tiene Valtteri Bottas con 1'13". AHAHAH... igualito que mi coche, que ha tardado 2'48" según el simulador.
+
+<img width="544" height="597" alt="Captura de pantalla 2026-03-07 211158" src="https://github.com/user-attachments/assets/970f38c7-f99b-4fbc-9284-8e18857dae33" />
+
+Bueno, no sé si es un tiempo aceptable para este circuito con este simulador, pero si estuviera compitiendo contra un carrito del supermercado puede que gane, eh... Y oye, he terminado la vuelta, que ya es todo un logro. Iupiiii!
+
 
 
