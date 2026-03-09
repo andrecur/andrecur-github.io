@@ -70,17 +70,18 @@ Dado que la segmentación inicial suele contener ruido, apliqué operaciones mor
 Por supuesto no funcionó bien a la primera: además del objeto, detectaba zonas de mi cara. Como dije: el rojo, elección acertadísima. 
 Tuve que ajustar los valores del rango aumentando un poco la saturación minima para hacer la detección más estricta. Tras varios intentos, finalmente conseguí aislar el  objeto.  
 
-<img width="810" height="722" alt="red_filter1" src="https://github.com/user-attachments/assets/1e2bf0c7-9a86-4d6b-9719-b83effb332f9" />
+<img width="400" height="300" alt="red_filter1" src="https://github.com/user-attachments/assets/1e2bf0c7-9a86-4d6b-9719-b83effb332f9" />
 
 
 2. Realicé una segunda prueba cambiando el color (quizás el azul sea más agradecido) y también el objeto a detectar, para observar cómo cambia la detección.
 
 Resulta que soy muy lista, porque mi sudadera aparece azul oscuro en la cámara (aunque en realidad es morada; la luz y la resolución de la cámara del pc me la enseñan con otro tono). Así que, además de la botella, también detecta la manga de mi sudadera 😆.
-<img width="846" height="712" alt="image" src="https://github.com/user-attachments/assets/da50b97c-d25b-4622-a51d-5eea85f2ceee" />
+<img width="400" height="300" alt="image" src="https://github.com/user-attachments/assets/da50b97c-d25b-4622-a51d-5eea85f2ceee" />
 
 Bueno... yo diría que funciona.
 Para comprobarlo, me quito la sudadera:
-<img width="777" height="543" alt="image" src="https://github.com/user-attachments/assets/baaaafd0-97f0-47b2-8a63-d35e2160901a" />
+
+<img width="350" height="250" alt="image" src="https://github.com/user-attachments/assets/baaaafd0-97f0-47b2-8a63-d35e2160901a" />
 
 Lo damos por bueno, ¿sí?
 
@@ -230,7 +231,7 @@ Bueno... a veces oscila, sí. Pero de verdad me esperaba una reacción mucho peo
 
 Por cierto, el circuito de Montreal mide 4.361 km, y la vuelta rápida la tiene Valtteri Bottas con 1'13". AHAHAH... igualito que mi coche, que ha tardado 2'48" según el simulador.
 
-<img width="544" height="597" alt="Captura de pantalla 2026-03-07 211158" src="https://github.com/user-attachments/assets/970f38c7-f99b-4fbc-9284-8e18857dae33" />
+<img width="300" height="400" alt="Captura de pantalla 2026-03-07 211158" src="https://github.com/user-attachments/assets/970f38c7-f99b-4fbc-9284-8e18857dae33" />
 
 Bueno, no sé si es un tiempo aceptable para este circuito con este simulador, pero si estuviera compitiendo contra un carrito del supermercado puede que gane, eh... Y oye, he terminado la vuelta, que ya es todo un logro. Iupiiii!
 
@@ -243,6 +244,12 @@ Pero ¿sabes por qué se estrelló? Porque perdió la línea y no fue capaz de v
 Después de llevar un rato allí pegado a la pared, me fijé en que daba pequeños trompicones intentando girarse. Y ahí me di cuenta de que tenía que cambiar el ángulo y la velocidad en el caso de que pierda la línea. Tenía configurada una velocidad demasiado elevada para el ángulo de giro que estaba usando cuando el robot perdía la línea. Así que ajusté esos parámetros, porque cuando se pierde la línea conviene girar fuerte y avanzar despacio, justo como hacen los pilotos de F1. Lo importante para mi robot es reencontrar la línea primero.
 
 Volví a correr Montmeló y... ¡wow! otro circuito completado, sorpendenteeeee 🎉!
+
+Mira, pasa el 82%, el 88% (los dos puntos más críticos) y llega al final!
+
+<img width="300" height="400" alt="Captura de pantalla 2026-03-09 092510" src="https://github.com/user-attachments/assets/93b951cd-e7ba-480a-870f-75d507235c2c" />
+<img width="300" height="400" alt="Captura de pantalla 2026-03-09 092626" src="https://github.com/user-attachments/assets/1b7ef7bd-3118-4a14-ab91-5269d3f1ecf9" />
+<img width="300" height="400" alt="Captura de pantalla 2026-03-09 092728" src="https://github.com/user-attachments/assets/4a0487cb-42cc-4158-aa95-748593e288d9" />
 
 Lo que me da un poco de rabia es que no podré comprobar todos los circuitos que hay, porque las simulaciones tardan muchísimo y de aquí a la entrega no tendré tiempo suficiente para probarlos todos. Así que, confío en estos tres circuitos superados, y espero que el comportamiento sea lo suficientemente robusto para los demás, y que cuando (y si) pierde la línea, sea capaz de recuperarla y volver a la trayectoria 🙏🏻.
 
