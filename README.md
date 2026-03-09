@@ -234,5 +234,16 @@ Por cierto, el circuito de Montreal mide 4.361 km, y la vuelta rápida la tiene 
 
 Bueno, no sé si es un tiempo aceptable para este circuito con este simulador, pero si estuviera compitiendo contra un carrito del supermercado puede que gane, eh... Y oye, he terminado la vuelta, que ya es todo un logro. Iupiiii!
 
+Seguimos con Montemló.
+
+Wow, parecía ir bien... hasta que se estrella al quedar menos del 20% para llegar al final del circuito. ¡Ohhh, qué pena!
+
+Pero ¿sabes por qué se estrelló? Porque perdió la línea y no fue capaz de volver a verla. Así que realmente este choque me sirvió, eheh. 
+
+Después de llevar un rato allí pegado a la pared, me fijé en que daba pequeños trompicones intentando girarse. Y ahí me di cuenta de que tenía que cambiar el ángulo y la velocidad en el caso de que pierda la línea. Tenía configurada una velocidad demasiado elevada para el ángulo de giro que estaba usando cuando el robot perdía la línea. Así que ajusté esos parámetros, porque cuando se pierde la línea conviene girar fuerte y avanzar despacio, justo como hacen los pilotos de F1. Lo importante para mi robot es reencontrar la línea primero.
+
+Volví a correr Montmeló y... ¡wow! otro circuito completado, sorpendenteeeee 🎉!
+
+Lo que me da un poco de rabia es que no podré comprobar todos los circuitos que hay, porque las simulaciones tardan muchísimo y de aquí a la entrega no tendré tiempo suficiente para probarlos todos. Así que, confío en estos tres circuitos superados, y espero que el comportamiento sea lo suficientemente robusto para los demás, y que cuando (y si) pierde la línea, sea capaz de recuperarla y volver a la trayectoria 🙏🏻.
 
 
