@@ -145,6 +145,7 @@ Resumiendo: el coche ve el rojo, pero no sabe que hacer con ello. Creo que aquí
 
 ## Valores PID
 Sabado 28/02/2026
+
 Vale, ya tengo la línea roja detectada. Ahora necesito que el coche haga algo inteligente con eso. Y es aquí donde tengo que introducir el famoso error.
 
 Para hacer el seguimiento de la línea necesito saber dónde está la línea respecto al coche, y eso significa calcular su centroide. Voy a calcularlo directamente como la media de los píxeles blancos: tengo una región blanca (la máscara del rojo), y lo único que necesito es su centro horizontal. Así que calculo la media horizontal de los píxeles blancos. 
@@ -203,6 +204,7 @@ Hoy no puedo más.
 
 ## Seguimos
 Miercoles 04/03/2026
+
 En clase comentamos nuestro respectivos estado de la práctica (un poco desastre en mi caso 🥲). Y además del PD para la velocidad, oigo que están comentando que podría configurar incluso dos escenarios, el de curva y el de recta. Pero piano, piano... vamos un paso a la vez.
 Empiezo a añadir Kp y Kd también a la velocidad, porque hasta ahora solo estaba controlando "bien" el giro, pero el robot seguía yendo a toda pastilla aunque estuviera entrando en una curva. Así que claro, luego le pedía que corrigiera y aquello era una fiesta de bandazos.
 
@@ -217,6 +219,7 @@ Mi conclusión fue: primero voy a dejar bien ajustado el control con un único e
 
 ## La entrega se acerca
 Sabado 07/03/2026
+
 Ayer estuve ajustando y tuneando los parámetros. Le dediqué el poco tiemnpo que he podido, pero la verdad es que fue un poco frustrante porque parecía no llegar nunca a algo que funcionara realmente bien. Probaba ajustes, cambiaba valores... y siempre había alguna parte del circuito donde algo fallaba.
 
 Pero después de unos cuantos ajustes más, bueno… creo haber alcanzado un cierto equilibrio en mis parámetros. O por lo menos, creo haber llegado al máximo equilibrio posible en mi código con los parámetros que tengo ahora mismo. Así que, por el momento, poco más voy a tocar. 
@@ -253,4 +256,38 @@ Mira, pasa el 82%, el 88% (los dos puntos más críticos) y llega al final!
 
 Lo que me da un poco de rabia es que no podré comprobar todos los circuitos que hay, porque las simulaciones tardan muchísimo y de aquí a la entrega no tendré tiempo suficiente para probarlos todos. Así que, confío en estos tres circuitos superados, y espero que el comportamiento sea lo suficientemente robusto para los demás, y que cuando (y si) pierde la línea, sea capaz de recuperarla y volver a la trayectoria 🙏🏻.
 
+## El veredicto final
+Martes 10/03/2026
+
+Día de la entrega. Mejor dicho: noche de la entrega. 
+En clase hoy se hablaba de los resultados y mis compis me comentaban que hay un circuito donde el coche se le iba al otro lado nada más salir. Me entraron dudas sobre mi coche, porque ese circuito no estaba entre los tres que había probado... Así que lo pruebo.
+
+NO ME LO PUEDO CREER.
+
+¿A que era de esperarse que en el circuito ese, que ya de suyo tiene un nombre raro y dificil, el comportamiento de mi robot también iba a ser raro y dificil?? Pues no funciona allí!!😭😭😭
+
+<img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/0cbf1f70-19b5-455b-9453-e91c33b81aca" />
+
+¡Qué maaaal! Qué desastreeee!
+
+¿Pero que le pasa? Si iba bien en los demás circuitos! 
+¿Y ahora quien lo ajusta para la entrega? Que desesperación... mi robot no es nada de fiar.
+
+Pasó exactamente lo que me contaban los compis: el coche sale, curva hacía la derecha y se queda allí parado mirando el césped, como si no tuviera absolutamente ninguna gana de dar la vuelta por la pista y dijera: yo me paro aquí, prefiero ver el césped. Gracias, coche, me faltaba esto además de descubrirlo justo antes de la entrega.
+
+OK, nada, a ver que se me ocurre. 
+
+Primero le puse un límite inferior de velocidad para ver si así evitaba que se quedara parado. Nada, no sirve. Al imprimir los valores de error, ángulo y velocidad veo que a los pocos frames de empezar pega un volantazo brutal hacia la derecha (-24) que hace que el error salte muchísimo y el coche pierda la línea. 
+
+Intenté limitar el ángulo, pero tampoco sirve.
+
+Probé también a limitar la vista del coche para que solo mire el suelo cerca de él y no toda la pista. Pero tampoco funciona.
+
+No sé qué otra cosa probar.
+
+Así que nada, voy a entregar tal cual está y aceptar que en este circuito el resultado será DNF: no clasificado y abandono nada más salir (a Alonso le pasa a menudo, así que comparto sus sentimientos).
+
+Que no todas pueden ser victorias.
+
+Las derrotas también forjan el alma.
 
