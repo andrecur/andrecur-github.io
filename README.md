@@ -312,4 +312,44 @@ Realmente el miércoles no hice mucho. Estuve intentando entender las líneas de
 
 Y bueno, tardé un ratillo, pero guay: primero pude visualizar la escena normal y enseguida pasé a aplicarle el filtro de Canny para detectar bordes y ver el resultado. Qué chulo.
 
+Cuando Github me deje subo foto eh...
+
+
+Sabado 14/03/2026
+
+Volvemos a abrir nuestro 3D recostruction, a ver si pasamos a la fase 2. 
+
+Ya tengo las dos imagenes y también los bordes detectados con Canny, así que ya tengo los píxeles de interés sobre los que voy a trabajar. Ok, seguimos. Ahora viene la parte realmente clave de la práctica: emparejar los píxeles!
+
+Yo la ídea la he entenido: para cada píxel de interés en la imagen izquierda, hay que encontrar su equivalente en la imagen derecha. Pero no los buscamos en toda la imagen, sino en esa famosa franja epipolar (que, fuera de este contexto, me podría llevar a pensar en un area alrededor del Ártico llena de osos polares 🐻‍❄️🐻‍❄️🐻‍❄️🥲). 
+
+Así que tengo que recorrer los pixeles de interés de la izquierda y, para cada uno, buscar en la misma fila de la imagen de la derecha. Después comparar pequeñas ventanas alrededor del píxel (una en la izquierda y otra en la derecha) y decidir cuál es la mejor coincidencia. Uff, menos mal que restringimos la búsqueda a la epipolar, porque si ya me parece un trabajazo así, no quiero ni imaginar lo que sería recorrer tooooodos los píxeles de la imagen!
+
+Ok, ventana izquierda vs ventana derecha. Para ver si son similares usaré alguna medida de similitud... 🤔
+Bueno, vamos a empezar por esto y a ver si aparece algo.
+
+Uhh, sí! He puesto que me enseñe los puntos para los que el algoritmo ha encontrado una correspondencia, y aparecen en rojo sobre la imagen izquierda. Qué interesante... muy bien, muy bien! 👏🏻👏🏻
+
+Pero todavía no he reconstruido nada 😆 
+Habrá que hacerlo, no? eheh
+
+Ah, y acabo de enterarme de que en la parte final del tutorial hay unos hints. Muy bien, muy bien, a ver qué dicen.
+
+Arreglo un par de cosas que no había tenido en cuenta y ahora toca añadir la parte de triangulación, que por lo que veo utiliza la posición de las cámaras para reconstruir el punto en 3D. A ver qué sale...
+
+Pf... esto es lentísimo. Para cargar lo que ve el robotín se pega un buen rato 😒😣😪
+
+Oye… ¡parece que está haciendo algo!
+Veo que está como escaneando y encontrando los matchings.
+
+¡Pero no consigo verlo en el visor 3D!! 😭
+
+MMmmmm.... he ido a ver el video demonstrativo de la solución y, bueno, no se parece nada al resultado que tengo yo ahora. No tengo esa zona marcada en azul, tampoco esa visualización en 3D tan chula, y por supuesto a mí no se me reconstruye nada... 
+
+Nada, lo dejo aquí por hoy.
+A ver si la noche trae consejos...
+
+
+
+
 
