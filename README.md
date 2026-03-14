@@ -291,3 +291,25 @@ Que no todas pueden ser victorias.
 
 Las derrotas también forjan el alma.
 
+
+# Práctica 2
+
+Miercoles 11/03/2026
+
+Ni tuve tiempo de saborear la emoción de haber conducido un F1 que ya nos tuvimos que teletransportar a un entorno con personajes de videojuegos para reconstruirlos en 3D con mirada estereoscópica... 😵‍💫
+
+La practica 2, a ver si me he enterado bien, va de tres pasos principales: 
+
+1. Trabajar con las imágenes de las dos cámaras: usar funciones de OpenCV para capturar y procesar las imágenes de la cámara izquierda y la derecha.
+2. Emparejamiento de píxeles: aquí tenemos que encontrar el primo hermano de un punto de la cámara izquierda en la cámara derecha. Tengo apuntado *restricción epipolar* (tenemos que definir la linea, es aqui donde debería estar el píxel); *pixeles de interés* (no se comparan todos, solo algunos píxeles), *comparar vecindad* (píxeles alrededor del punto para ver cual se parece más y elegir el mejor candidato).
+3. Triangular y visualizar: a partir de los homólogos, se retroproyectan los rayos para encontrar la posición en 3D. Luego coloreamos los puntos y se visualiza la reconstrucción.
+
+Todo esto me parece dificilísimo 😅.
+
+Pero bueno, sin miedo, empezamos con este segundo trabajo.
+
+Realmente el miércoles no hice mucho. Estuve intentando entender las líneas de código explicadas en el tutorial para, por lo menos, conseguir ver la escena con los dos ojos del robotín.
+
+Y bueno, tardé un ratillo, pero guay: primero pude visualizar la escena normal y enseguida pasé a aplicarle el filtro de Canny para detectar bordes y ver el resultado. Qué chulo.
+
+
