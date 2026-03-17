@@ -349,6 +349,39 @@ MMmmmm.... he ido a ver el video demonstrativo de la solución y, bueno, no se p
 Nada, lo dejo aquí por hoy.
 A ver si la noche trae consejos...
 
+Martes 17/03/2026
+
+Bueno bueno bueno... Después de la frustración máxima del sábado por la noche, decidí preguntar en el grupo del máster si alguien más estaba teniendo problemas con la visualización de la nube de puntos. Y ... plot twist inesperado 😭 ¡Por mi sorpresa, no era yo! 🥲🎉
+
+¡Más gente con el mismo problema! 🥳🥳 Confieso que sentí una mezcla de alivio y resignación, en plan 'he hecho lo que podía y parece que no iba tan desencaminada' 😯.
+
+Uno de los compañeros lleva el robotic backend, así que dijo algo tipo: 'Vamos a subir una nueva versión con eso arreglado'. 
+👀👀👀
+Yupiii! Mil graciaaaas 🥲😭, a ver si luego funciona.. 
+Esto fue el domingo. Pues nada, a esperar al lunes. 
+
+Y llega el lunes por la noche y aparece el mensaje prometedor: 'Ya hemos publicado un nuevo docker...'
+Amigos, que emoción!
+
+Total, que hoy martes por la mañana me he puesto en ello.
+He descargado la nueva versión y además he aprovechado en el trabajo la conexión por cable ethernet. Wow. Que cambio. La primera vez que descargué esto en casa estuve un domingo entero, ahora han sido... 15 minutos?? 🤣🥲🥲🥲
+
+Así que esta vez ha sido todo mucho mejor.
+
+Peeeeero... (obviamente hay un pero): no he podido probar nada todavía porque.. estoy en el trabajo y tengo que trabajar (que sorpresa 😒). Así que ahora mismo estoy con muchas ganas y curiosidad, pero cero pruebas todavía.
+
+A ver cuando puedo probarlo (mañana miércoles quizás?). Si realmente era el backend igual de repente aparece la nube 3D y puedo comprobar si lo que he hecho está bien. O igual no 😆
+Pero bueno, vuelvo pronto.
+
+ps. hoy sí he podido añadir las imagenes por fin:
+
+aquí la visualización de bordes con Canny y los puntos de correspondenica en rojo
+
+<img width="400" height="300" alt="Captura de pantalla 2026-03-11 173729" src="https://github.com/user-attachments/assets/9de04d8f-efa6-4a63-a365-f5b336e47707" />
+
+<img width="400" height="300" alt="Captura de pantalla 2026-03-14 200651" src="https://github.com/user-attachments/assets/c4db38fd-b436-4f26-a2af-071ffab8883f" />
+
+
 
 
 
