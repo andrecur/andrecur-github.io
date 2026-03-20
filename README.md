@@ -377,11 +377,74 @@ ps. hoy sí he podido añadir las imagenes por fin:
 
 aquí la visualización de bordes con Canny y los puntos de correspondenica en rojo
 
-<img width="400" height="300" alt="Captura de pantalla 2026-03-11 173729" src="https://github.com/user-attachments/assets/9de04d8f-efa6-4a63-a365-f5b336e47707" />
+<img height="300" alt="Captura de pantalla 2026-03-11 173729" src="https://github.com/user-attachments/assets/9de04d8f-efa6-4a63-a365-f5b336e47707" />
 
-<img width="400" height="300" alt="Captura de pantalla 2026-03-14 200651" src="https://github.com/user-attachments/assets/c4db38fd-b436-4f26-a2af-071ffab8883f" />
+<img height="300" alt="Captura de pantalla 2026-03-14 200651" src="https://github.com/user-attachments/assets/c4db38fd-b436-4f26-a2af-071ffab8883f" />
 
+# Backend actualizado
 
+Miercoles 18/03/2026
+
+Por fin pude probar la nueva actualización del backend. Estábamos en clase y, iupiii🎉... ShowAllPoints funcionaba!
+Ahhahah, que alivio...después de tanta frustración poder ver algo en el visor fue toda una alegria. Mil gracias al compi y el equipo de robótica porque si no no habría podido avanzar y ver esto:
+
+<img width="200" alt="Captura de pantalla 2026-03-18 163444" src="https://github.com/user-attachments/assets/2e7dcfc5-3a5c-432d-b90e-4650a4ee1f1f" />
+
+Que ya tu me dices si se parece de alguna forma a la escena real. Mira, comparamos:
+
+<img width="400" alt="Captura de pantalla 2026-03-18 163548" src="https://github.com/user-attachments/assets/d70d3ed7-d832-41c9-af05-f7cfc7e93be3" />
+
+🤣🤣🤣
+
+Bueno, creo que hay que mejorar algo, ¿¿no??
+
+Pero justo allí, siguiente golpe: leí el enunciado de la práctica, más en específico "No puedes asumir que es un par estéreo canónico, tendrás que retroproyectar y proyectar en la otra cámara..." Amigo! Ahora caigo!! Recuerdo que el profe comentó algo como “¿y si la cámara no está paralela?” e hizo un gesto como inclinándola hacia arriba..Y ahí, caigo yo y el mundo encima de mi también 😅. Yo estaba con el caso 'fácil' o sea con las cámaras paralelas y búsqueda horizontal, pero eso no era lo que se pedía. Raro era que en 'tan poc' tiempo había casi llegado a la solución!! 🤣
+
+Pues naa.. cambio de enfoque, de 2D a 3D ( a caso no es reconstrucción 3D? 😅🤦‍♀️). Hasta ahora buscaba correspondencias en horizontal en la imagen derecha, pero ahora la lógica tenía que ser generar un rayo 3D desde la cámara izquierda, proyectarlo en la derecha, buscar correspondencias sobre esa geometría. Ahahah, así suena sencillo. Implementarlo... no tanto.
+Ya te digo ese miercoles no tuve tiempo de seguir, lo dejé para otro día..
+
+# La batalla
+
+Viernes 20/03/2026
+
+Uhi, que me ha costado, eh, me he estado peleando bastante. Que lucha para llegar a tener lo que ahora mismo considero un buenisimo resultado 🥲
+
+He pasado por todas las fases posibles, y seguro por fases imposibles para los expertos del tema, como:
+
+1. ok, estoy emparejando, pero la reconstrucción 3D deja un poco a desear con esos cuadritos...
+
+ <img width="700" alt="Captura de pantalla 2026-03-18 165806" src="https://github.com/user-attachments/assets/a229b605-2cd1-4e42-9bcc-f1208d335818" />
+
+2. mmm que raro esas lineas epipolares oblicuas y esa masa de arte cubica abstracta que se visualiza como nube de 'puntos'...
+
+<img width="700" alt="Captura de pantalla 2026-03-19 102408" src="https://github.com/user-attachments/assets/260b538f-3353-424e-9097-08b663d6a621" />
+
+3. ahora sí, el emparejamiento de nuevo tiene sentido, pero la nube de cubos no es lo que queremos....
+
+<img width="700" alt="Captura de pantalla 2026-03-19 105605" src="https://github.com/user-attachments/assets/dff600fa-9c47-4153-977d-96ee7f10b566" />
+
+4. olée hay puntos, pero dispersisimos en todo el espacio como estrellas en el universo....
+
+(se me olvidó hacer captura de pantalla, y os lo digo claro que no vuelvo atrás para hacerla, vale?)
+
+5. etc
+
+Vamos, seguí un buen rato, me pelée también un poco con graficToOptical y opticalToGrafical y las coordenadas homogeneas, arregla por allí, arregla por aquí... en fin, ya me rindo...
+
+Nada, me da por girar un poco la visión que tengo de la nube de puntos y... espera, espera espera... aleja un poc... ANDAAAAAAAA!!!! pero si está ahiiii!!!🚀✨
+
+<img width="1000" alt="Captura de pantalla 2026-03-20 172534" src="https://github.com/user-attachments/assets/2819df55-4449-42f0-a423-62c5e59a7c93" />
+
+Increible, que momentazo! De verdad, fue un momento de emoción total. Casi lloro 😭
+Ahí estaba la nube de puntos . Lejos, en grande, pero realmente estaba alliii.
+
+<img width="1000" alt="Captura de pantalla 2026-03-20 172204" src="https://github.com/user-attachments/assets/980c1ce6-7b09-42a5-a2b5-02174356be9a" />
+
+MIra, en blanco se ve aun mejor
+
+<img width="1000" alt="Captura de pantalla 2026-03-20 180652" src="https://github.com/user-attachments/assets/11230edc-9d52-4beb-a9b4-adb34cc79f28" />
+
+Ole, que contenta! Bueno, lo sé, aún tengo que mejorarla (escalarla y ver si necesita desplazamiento), perowow, la reconstrucción 3D FUNCIONA!
 
 
 
