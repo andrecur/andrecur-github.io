@@ -472,7 +472,7 @@ Ya lo confirmaremos sobre la marcha, pero de entrada al menos parece así 🥲.
 
 Encendemos cámaras y empezamos.
 
-# Primer contacto
+## Primer contacto
 
 Ok, cámaras encendidas.👀✔️
 
