@@ -488,7 +488,7 @@ Y hoy tiene intención de avanzar bastante, porque durante la próxima semana no
 
 Así que vamos a por ello.
 
-# Preparando el terreno
+## Preparando el terreno
 
 Repaso mental: tengo cámara, tengo láser, tengo posiciones de los tags, tengo odometría.
 En resumen: muchas cosas! Y vamos a intentar, por una vez, usarlas todas con un poco de sentido.
@@ -499,7 +499,7 @@ Luego, otra iluminación: ¡las esquinas!
 
 Claro. Para localizar bien el tag, no basta con ver un cuadrado negro raro estilo QR, sino que hay que encontrar sus cuatro esquinas, porque serán los puntos que luego usaremos para calcular su posición relativa. Así que también dejamos eso preparado. Bien.
 
-# Misión dos: detección
+## Misión dos: detección
 La siguiente misión era hacer que detectara esas esquinas, y que las dibujara en la imagen con ese clásico cuadrito verde de detección, que conocemos muy bien. Y.. olé! 💃🏻
 Detecta dos tags y veo dos tags! Pequeñas victorias que dan mucha alegría 🤩. Bueno... en realidad al principio los detectaba pero no los dibujaba. Y después descubrí que el problema era mucho de mí, que simplemente no estaba enseñando la imagen correcta, ihih.
 
@@ -516,7 +516,7 @@ Y bueno, además, se está muy bien afuera con el solecito 🤭.
 
 Más tarde reseteé y volví al interior, que pena.
 
-# Misión ¿donde estoy?
+## Misión ¿donde estoy?
 Una vez que ya detectaba bien los AprilTags, pasamos al siguiente nivel: de ver ese AprilTag en la imagen a saber dónde está ese AprilTag respecto a mi cámara. Y aquí es donde entra en juego solvePnP, con la que convierto lo que veo visualmente en localización geométrica.
 
 Después de pelearme un poco con ello, conseguí llegar a saber dónde está el tag respecto a la cámara, lo que significa que la aspiradora empieza a entender la escena.
