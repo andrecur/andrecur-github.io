@@ -381,7 +381,7 @@ aquí la visualización de bordes con Canny y los puntos de correspondenica en r
 
 <img height="300" alt="Captura de pantalla 2026-03-14 200651" src="https://github.com/user-attachments/assets/c4db38fd-b436-4f26-a2af-071ffab8883f" />
 
-# Backend actualizado
+## Backend actualizado
 
 Miercoles 18/03/2026
 
@@ -403,7 +403,7 @@ Pero justo allí, siguiente golpe: leí el enunciado de la práctica, más en es
 Pues naa.. cambio de enfoque, de 2D a 3D ( a caso no es reconstrucción 3D? 😅🤦‍♀️). Hasta ahora buscaba correspondencias en horizontal en la imagen derecha, pero ahora la lógica tenía que ser generar un rayo 3D desde la cámara izquierda, proyectarlo en la derecha, buscar correspondencias sobre esa geometría. Ahahah, así suena sencillo. Implementarlo... no tanto.
 Ya te digo ese miercoles no tuve tiempo de seguir, lo dejé para otro día..
 
-# La batalla
+## La batalla
 
 Viernes 20/03/2026
 
@@ -446,6 +446,105 @@ MIra, en blanco se ve aun mejor
 
 Ole, que contenta! Bueno, lo sé, aún tengo que mejorarla (escalarla y ver si necesita desplazamiento), perowow, la reconstrucción 3D FUNCIONA!
 
+# Práctica 3
+
+Miercolés 25/03/2026
+
+Empezamos otro desafío. 
+Tengo que entregar la práctica 2 todavía, antes de las 23.59, pero lo haré por la tarde noche al volver a casa. Ya ajusté la escala y poco más, pero mejor revisar todo antes de enviarla..
+
+Entonces a comenzar con la práctica 3. Ahora soy una aspiradora 😅
+
+Y atentos, una aspiradora que sigue balizas. Me hizo gracia desde el principio, porque cuando oí 'balizas' pensé automáticamente en las dichosas balizas obligatorias de la DGT 🚨, esas de las que nos han hecho una cabeza así 🤯.
+
+Pero no. Resulta que la palabra 'baliza' en español es mucho más amplia y puede referirse a un montón de elementos! Que, en el fondo, no dejan de ser señales o referencias visuales.. No sé por qué no lo llaman simplemente señales, la verdad 😅🤷🏻‍♀️. En italiano no existe una palabra genérica para todo esto, cada cosa tiene su nombre y punto: boa, faro, etc. Pero bueno, ya he entendido por dónde van los tiros con las balizas...
+
+Como decía, la práctica va de una aspiradora robot y de localización con balizas visuales. Tenemos una cámara, un mapa, unas balizas distribuidas por el entorno con ese nombre tan bonito de AprilTags. Estós códigos están colocados por las paredes de la habitación donde vamos a aspirar polvo y pelo de gato entre obstáculos como un piano, una mesa y unas sillas. Tampoco se tratará de conducir el coche de F1 como el la P1 pero me imagino que esos obstaculos los tendré que esquivar y tendré que hacer que la aspiradora pueda navegar por alli tranquila y fluidamente...
+
+Después de leer un poco las instrucciones y revisar los comandos que nos dan, la idea general que me hago es esta:
+- Detectar el AprilTag en la imagen;
+- Encontrarlo bien en la cámara;
+- Estimar la posición y orientación de yo aspiradora respecto a ese tag;
+- Y después pasar esa información al sistema global del mundo 🌍
+
+Como siempre, dicho así de esta forma, la explicación parece clara y hasta sencilla. Otra cosa luego es pasar de esa idea bonita a un código que haga realmente eso sin ponerse demasiado creativa 😅. Aun así, lo bueno es que esta práctica parece ser más agradecida que la práctica 2.
+Ya lo confirmaremos sobre la marcha, pero de entrada al menos parece así 🥲.
+
+Encendemos cámaras y empezamos.
+
+# Primer contacto
+
+Ok, cámaras encendidas.👀✔️
+
+En la página del curso nos ponen varios ejemplos: uno para 'parsear' los datos láser, otro para cargar y detectar tags, luego la parte de modelado y calibración de cámara. Ok, primero leerlos uno a uno y a intentar entender cómo encajarlos en el código.
+
+Pero.. se acabó la hora de práctica, no dio tiempo a mucho más, así que lo dejé para retomarlo otro día.
+
+Domingo 29/03/2026
+
+Eccomi. La aspiradora ha vuelto.
+
+Y hoy tiene intención de avanzar bastante, porque durante la próxima semana no voy a poder dedicarle practicamente nada de tiempo, y además tengo otras tres prácticas pendientes que me convendría dejar igual de encaminadas.
+
+Así que vamos a por ello.
+
+# Preparando el terreno
+
+Repaso mental: tengo cámara, tengo láser, tengo posiciones de los tags, tengo odometría.
+En resumen: muchas cosas! Y vamos a intentar, por una vez, usarlas todas con un poco de sentido.
+
+Empiezo por lo que me parece más lógico, o sea cargar los AprilTags y detectarlos. En el repaso en clase el miércoles, comentamos que necesitamos una cosa importante: el tamaño del tag! Así que fui a buscar y justo estaba específicado en las instrucciones, menos mal 😬. Perfecto. Eso es mi referencia física real, que luego usaré para la pose.
+
+Luego, otra iluminación: ¡las esquinas! 
+
+Claro. Para localizar bien el tag, no basta con ver un cuadrado negro raro estilo QR, sino que hay que encontrar sus cuatro esquinas, porque serán los puntos que luego usaremos para calcular su posición relativa. Así que también dejamos eso preparado. Bien.
+
+# Misión dos: detección
+La siguiente misión era hacer que detectara esas esquinas, y que las dibujara en la imagen con ese clásico cuadrito verde de detección, que conocemos muy bien. Y.. olé! 💃🏻
+Detecta dos tags y veo dos tags! Pequeñas victorias que dan mucha alegría 🤩. Bueno... en realidad al principio los detectaba pero no los dibujaba. Y después descubrí que el problema era mucho de mí, que simplemente no estaba enseñando la imagen correcta, ihih.
 
 
+<img height="300" alt="Captura de pantalla 2026-03-29 130259" src="https://github.com/user-attachments/assets/43398804-37ee-4b28-9ea8-f6e1e261392f" />
 
+Así que sí, el detector funcionaba. De hecho, en cuanto corregí...
+Yeeeeh, resuelto.
+<img height="300" alt="Captura de pantalla 2026-03-29 131458" src="https://github.com/user-attachments/assets/7c9dc269-1067-4771-9a85-356503f6d194" />
+
+No os preguntéis por qué en ese momento en Gazebo Slim se ve la casa desde fuera (y que buena casita) en vez de por dentro. La respuesta es:
+me salí y luego no fui capaz de volver a entrar 🤣.
+Y bueno, además, se está muy bien afuera con el solecito 🤭.
+
+Más tarde reseteé y volví al interior, que pena.
+
+# Misión ¿donde estoy?
+Una vez que ya detectaba bien los AprilTags, pasamos al siguiente nivel: de ver ese AprilTag en la imagen a saber dónde está ese AprilTag respecto a mi cámara. Y aquí es donde entra en juego solvePnP, con la que convierto lo que veo visualmente en localización geométrica.
+
+Después de pelearme un poco con ello, conseguí llegar a saber dónde está el tag respecto a la cámara, lo que significa que la aspiradora empieza a entender la escena.
+
+Pero, a ver, ahora que sé dónde está el tag respecto a la cámara, el siguiente problema es: ¿y entonces dónde estoy yo, aspiradora, respecto al tag? 
+
+Y luego, más dificil , ¿cómo convierto eso a posición en el mapa global 🌍?
+E importante, tendré que estar atenta a transformar bien entre sistemas de referencia 🧐.
+
+Como era de esperar, aquí apareció el clásico enemigo de toda práctica de visión y geometría: los signos ➕ ➖. ¿Quien pone los signos bien a la primera?? Porque vamos, le doy un tiramisú de premio (el tiramisú es mi postre favorito)..
+Y bueno también, probablemente, los ejes mal interpretados, eheh.
+
+Pero lo bueno es que ya conseguí que el sistema estimara una posición 🎉
+Aunque, eso sí... la estimación todavía no coincide demasiado con la posición real 😅
+
+<img  height="400" alt="Captura de pantalla 2026-03-29 141912" src="https://github.com/user-attachments/assets/4e90029a-7e50-4e30-82a2-ea2ed6403081" />
+
+Pero bueno: cerca estoy!!
+
+Y a estas alturas de una práctica de robótica, 'cerca estoy' ya cuenta para mi como una victoria bastante respetable 🙂‍↕️ .
+
+Sigo, y voy a intentar ajustar mejor la transformación al sistema del mundo mundial, corrigiendo alguna línea, cambiando signos, etc. y a ver, a ver si consigo que la posición estimada se parezca un poco menos a holograma desplazado de la aspiradora....?
+
+<img width="500" alt="Captura de pantalla 2026-03-29 164535" src="https://github.com/user-attachments/assets/3725314e-8a2e-4469-b54a-42b546304696" />
+
+<img width="500" alt="Captura de pantalla 2026-03-29 174137" src="https://github.com/user-attachments/assets/5f7b0db8-cf4b-4e55-87b1-bc5d2a867654" />
+
+
+Oye! que voy mejorano!!
+
+Seguiremos informando.
