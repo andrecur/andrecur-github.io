@@ -548,3 +548,44 @@ Sigo, y voy a intentar ajustar mejor la transformación al sistema del mundo mun
 Oye! que voy mejorano!!
 
 Seguiremos informando.
+
+Sábado 11/04/2026
+Adelante con la práctica.
+
+En clase el profe, viendo en qué punto estaba, me dio algunas pistas sobre cómo seguir. Bueno, me hizo preguntas más que darme pistas directas, pero vamos, que sus preguntas fueron pistas: qué hacer si ve 2 tags, qué hacer si lo pierde y comprobar que la estimación se mantiene estable moviendo el robot un poco.
+
+Así que... vamos a jugar! ¡Vamos a hacer andar esta aspiradora!
+
+Primero tuve que revisar cómo se configuraba el movimiento del robot (setV y setW) y luego luché bastante para ver dónde meter esa parte del código: si fuera del while, dentro, pero... ¿en qué parte exactamente? Después de varias pruebas, en un determinado momento decidió que le gustaba ir marcha atrás y no había forma de pararlo o de que fuera hacia adelante. Vete a saber por qué 🤷🏻‍♀️. Hice otras cuantas pruebas y por fin conseguí que avanzaraaa!!
+
+<img height="250" alt="avanzaaa" src="https://github.com/user-attachments/assets/b1f0bdec-c873-4a80-881b-13699d3450d6" />
+
+También le he puesto que girara, y es muy gracioso porque comprobé que funciona con que casi se choca y sale disparada por los aires — adiós aspiradora 👋🏻— pero no, fue recta hasta quedarse a ras de la pared y giró. ¡Iupii! No sé si va a demasiada velocidad, pero es que si no no la veo moverse..
+
+<img height="250" alt="gira" src="https://github.com/user-attachments/assets/5fa1d702-cdc2-4735-925c-500adb721fc3" />
+
+Ok, he conseguido también configurar una sección de 'decisión', para que la aspiradora actúe de una forma u otra si ve o no ve el tag. Guay, parece que funciona... pero claro, pierde el tag, gira, ve otro, avanza un poco, lo pierde, vuelve a girar... y empieza a meterse debajo de la mesa y de las sillas.. la visión es limitada, está rodeada de obstáculos... socorrooooo!!!! ¡está atrapadaaaa!!!
+
+<img height="250" alt="atrapada" src="https://github.com/user-attachments/assets/5d272579-335e-46ad-8240-1abf03dbd310" />
+
+Bueno, la he dejado un buen rato dando vueltas por allí, a ver si se desatascaba... pero nada. No había forma de sacarla, se quedaba girando para siempre. Me recordó muchísimo a la conga de mi compañera de piso en Cádiz, que a veces se quedaba pillada y la encontrabas al cabo de un rato bloqueada en un rincón totalmente inesperado 🤣.
+
+A ver, lo ideal sería que se fuera a explorar en lugar de girar infinitamente sobre sí misma, así que le he añadido también ese estado, a ver qué hace.
+
+Ehhhmmm... ahora va adelante y atrás sin parar, como un columpio 😂 AHAHAHH. ¿Pero qué le pasaaa?
+
+<img height="250" alt="columpio" src="https://github.com/user-attachments/assets/d727054f-57f7-4025-bad9-2dedbde66727" />
+
+Nada, vuelvo a ajustar los parámetros de los estados, que seguro que por allí que van los tiros: setV y setW, necesito afinar. Además, en el código le he puesto que en un estado gire hacia la izquierda, pero no veo que lo haga en ningún momento... no sé, igual no le gusta.
+
+Otra cosa que le he añadido es centrar el tag en la trayectoria, para que no vaya recto como el robot que es, sino que se dirija hacia el tag como lo haría un ser con patas.
+
+Parece que lo he mejorado, eh: por fin ha conseguido moverse por la habitación en más de una dirección! 🥲🥲
+
+<img height="250" alt="Captura de pantalla 2026-04-11 211225" src="https://github.com/user-attachments/assets/02f709bc-6daf-4dc6-a336-e1f4be3ae488" />
+<img height="250" alt="Captura de pantalla 2026-04-11 211340" src="https://github.com/user-attachments/assets/84065cf0-9595-4c05-92e3-c89eda4c3f75" />
+
+La verdad es que ya no lo veo tan negro. Con suerte ajustando un par de detalles más, esta aspiradora estará lista para entregar (aunque yo en mi casa no la usaría... creo que me pondría nerviosa, porque es un poco tontita, la verdad 🤣🤣).
+
+Lo que sí creo es que los valores de velocidad que he puesto son una barbaridad. Pero si los bajo, no veo el movimiento y puedo tardar demasiado en ver resultados... y no, la entrega es el lunes, así que no me puedo permitir bajar velocidad y ángulo ahora mismo. A aspirar a máxima velocidad!
+
