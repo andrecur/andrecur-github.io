@@ -589,3 +589,41 @@ La verdad es que ya no lo veo tan negro. Con suerte ajustando un par de detalles
 
 Lo que sí creo es que los valores de velocidad que he puesto son una barbaridad. Pero si los bajo, no veo el movimiento y puedo tardar demasiado en ver resultados... y no, la entrega es el lunes, así que no me puedo permitir bajar velocidad y ángulo ahora mismo. A aspirar a máxima velocidad!
 
+
+# Práctica 4
+
+Viernes 01/05/2026
+
+Después de mucho tiempo sin señales de vida, aquí estoy. Que al retomar las prácticas ni me acuerdo de cómo se entra en Unibotics, de tanto tiempo que ha pasado!
+
+Bueno, resumiendo lo que he hecho en estos días previos: después de la P3, he tenido demasiado trabajo como para poder ponerme con otras cosas. De hecho, se me acumularon todas las prácticas... pero bueno.
+
+El miércoles me puse con mis mejores intenciones para avanzar en esta práctica, que decían que es sencilla, así que pensé que qué bien, no voy a tardar mucho 🥲.
+
+Palabras sabias... ¿no voy a tardar mucho? HAHAHAHA. Primera pared: descargar el dataset.🧱🧱🧱
+Claro, ¿cómo iba a saber yo que eran unos cuantos gigas de imágenes y que no eran 2 minutos de descarga sino 2 horas...? No sé por qué, pero cada vez que hay algo que descargar, yo tengo el hándicap de tardar 4 veces más, será la edad??🤣
+
+Habría tenido que preverlo y ponerme a descargar el dataset el primer día que nos habló de la P4, pero a ver.., yo qué sé que se habría tardado tanto 😅
+
+Pues nada, armada de paciencia, a esperar a que terminase la descarga.
+
+Unas compis me sugirieron utilizar git_lfs, que con clonar el repo se tardaba un minuto.
+¿Ah sí?? Pues interrumpo, lo pruebo... y para mi sorpresa, a mí me iba lentísimo igualmente 🐌🐌(bueno, era de esperarselo!).
+
+Nada, seguí con mi primera estrategia.
+Pero claro, cuando terminó la descarga ya era tarde y no me puse a seguir con las prácticas. Así que misión abortada.
+
+En los días siguientes, entre trabajo y otras prácticas, dejé abandonada la P4, porque necesito dedicarle tiempo para hacer bien lo que hay que hacer: entrenar una red y luego hacer que el coche vaya gracias a esta red.
+
+Y entonces hoy he avanzado un poco. Ya que tenía el dataset descargado, eso ya era un puntazo, así que me puse a ver cómo entrenar la red.
+
+Primero preparo el modelo y luego paso a la fase de controlar el coche.
+
+Bueno, el flujo resumido de lo que he hecho hoy: cargo las imágenes, las preproceso, cargo la información de las etiquetas, creo el dataset para entrenar el modelo, hago split train/val, entreno el modelo y guardo el modelo.
+
+Y nada, realmente me ha ocupado toda la mañana, y he obtenido unos valores razonables después de 5 épocas
+(después de la primera época parecía un caos total, pero lo he dejado entrenar y ha aprendido claramente 🥲): considero que con train loss 245 y val loss 53 el modelo ya es usable, o por lo menos suficiente para probar en el simulador.
+
+Así que más tarde continúo con la parte de la aplicación.
+
+Spoiler: me da a mi que lo complicado viene ahora...😅
