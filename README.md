@@ -627,3 +627,51 @@ Y nada, realmente me ha ocupado toda la mañana, y he obtenido unos valores razo
 Así que más tarde continúo con la parte de la aplicación.
 
 Spoiler: me da a mi que lo complicado viene ahora...😅
+
+## La red y el coche
+
+Sábado 02/05/2026
+
+Bien, esta mañana voy montando poco a poco en el simulador: enciendo las cámaras, ok; empiezo a hacer mover el coche, ok. Bueno, no le pongo PID ni nada, solo la velocidad... y efectivamente va recto estrellándose contra la pared. Guay, funciona! 🎉
+
+Y ahora... cargamos el modelo, estoy lista, ¡vamos! 
+...y quién podía imaginar que una línea de código tan simple me iba a dar tantos dolores de cabeza...
+
+Pues nada, por lo visto al exportar me generó el modelo en dos partes y claro, el simulador solo acepta una.😑
+
+Total, que me tiro otras dos horas (😪) volviendo al export_onnx que había montado y peleándome para que me diera un único fichero.
+
+Bueno, al final conseguí romper todo el entorno (cómo no). 💥😅
+Así que nada, fuerza bruta: lo eliminé y reinstalé todo usando versiones estables y evitando cosas raras.
+
+Ahora sí que tengo mi entorno limpito, y mira que bien y qué gusto: lanzo el export y por fin me devuelve el model.onnx que necesito. Olé para miii 💃🏻.
+
+
+Guay, contenta, pongo en marcha mi coche autónomo conducido por la red neuronal. 
+
+Primera impresión: wow, conduce perfecto, mejor que lo que yo había hecho en la P1... 😯😯😯
+
+Pero sorpresa... no! 🤣 Demasiada confianza. No llega a completar el circuito, se estrella y se queda en el césped. ciao, coche.
+
+<img height="250" alt="Captura de pantalla 2026-05-02 124428" src="https://github.com/user-attachments/assets/2df25f0b-16cd-4a34-b18d-1350c89fcb33" />
+
+Igual pruebo con otros circuitos, por curiosidad, a ver qué pasa.
+
+Bien, Montreal tampoco... se choca contra la pared bastante pronto. 🤭
+
+<img height="250" alt="Captura de pantalla 2026-05-02 125443" src="https://github.com/user-attachments/assets/d8d7e08c-4558-4c4d-bad5-84b0e2fe42b3" />
+
+y mira, Montmeló por lo menos lo empieza. mi coche de P1 creo que nunca llegó a correr ahí (o no me acuerdo..). a ver, a ver...
+mmm, no parece que esté conduciendo muy fino... 🙈 a ver hasta dónde llega...
+ahahah, nada, otro choque.
+
+<img height="250" alt="Captura de pantalla 2026-05-02 130008" src="https://github.com/user-attachments/assets/f43f7a8a-1c19-4cdd-a660-cddda816f69b" />
+
+Último circuito disponible: lo reconozco!! Este es en el que mi coche de P1 se iba a la izquierda nada más salir... y mira... AHAHAHAAHAHAH qué alegría ver que a la red le pasa lo mismo!! 🤣🎉🤣🎉 
+
+<img height="250" alt="Captura de pantalla 2026-05-02 130208" src="https://github.com/user-attachments/assets/f96d9bf5-1211-4102-afea-8d347389872f" />
+
+Entonces no era yo! 🥲 Confirmamos que ese circuito está maldito... que arreglen la pista!
+
+Nada, pues mucha confianza inicial, pero queda trabajo. Próximo paso: ajustar la red para mejorar la conducción, vamos a investigar.
+
