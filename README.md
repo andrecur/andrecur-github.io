@@ -675,3 +675,27 @@ Entonces no era yo! 🥲 Confirmamos que ese circuito está maldito... que arreg
 
 Nada, pues mucha confianza inicial, pero queda trabajo. Próximo paso: ajustar la red para mejorar la conducción, vamos a investigar.
 
+Mi primera intención fue remangarme para generar un dataset de entrenamiento con imágenes y acciones asociadas a partir de la conducción manual que tenía de la práctica P1, justo como comentó el profe: que si queríamos aumentar el dataset de entreno para la red, podíamos seguir esta estrategia también. 
+
+Perfecto, lo intentamos. Como considero que mi conducción no fue tan mal, adapto el código para que me guarde las imágenes y la v y la w correspondientes. Pero... más sorpresas! Parece que funciona, pero... ¿dónde está guardando? en Unibotics no veo nada... 🧐
+
+Por otro lado, me doy cuenta de que mi coche va como un cohete 🚀😳, cosa que no pasaba en P1 (¡pero si era un caracol! 🐌).
+
+Bueno, esto lo reviso después, le añado primero un print para ver si está guardando... y por lo que dice en el terminal, está guardando, ehehe 😅. PERO ¿DÓNDE??? 
+Intento crear yo una carpeta 'dataset' y direccionarlo ahí... nada, ni eso funciona...
+
+Pfff, lo dejo porque no sé qué más hacer. Mañana lo miro con la mente más fresca.
+
+Domingo 03/05/2026
+
+Ok, pregunto a los compis cómo van ellos, si saben cómo guardar las imágenes. Y Javi explicó algo de que hay que sacarlas del contenedor y no sé qué... que vamos, que la cosa no está a mi alcance ahora mismo, lo he entendiod del tirón así ahahahaha 🤣.
+
+Nada, misión abortada de momento. Así que sigo la estrategia clásica de entrenar más el modelo y hacer data augmentation con los datos que tengo. Modifico los parámetros, lo lanzo y me voy a comer, que seguro esto va a tardar horas. Por lo menos no desperdicio el tiempo...
+
+Pero ya sabes cuando piensas que estás haciendo una cosa inteligente, te vas toda tranquila y vuelves de comer aún más tranquila... hasta que miras el PC y vuelves a la realidad: ni inteligente ni nada. Imaginad mi cara al ver que no había terminado ni la época 1 😑🧱😑🧱😑.
+
+Porque claro, ¿quién pensó en que el PC se suspende a los 3 minutos y con él todos los procesos en curso? Pues yo no. Así que nada: ni avance en el entrenamiento, ni data augmentation, ni nada de nada.
+
+Uff, Santa Andrea, qué paciencia tienes que tener.
+
+Venga, a seguir entrenando... y mejor ponte con otra cosa, porque aquí se va a ir la tarde entera.
