@@ -699,3 +699,25 @@ Porque claro, ¿quién pensó en que el PC se suspende a los 3 minutos y con él
 Uff, Santa Andrea, qué paciencia tienes que tener.
 
 Venga, a seguir entrenando... y mejor ponte con otra cosa, porque aquí se va a ir la tarde entera.
+
+Viernes 08/05/2026
+
+Después de unas cuantas horas con la red entrenando, al final pruebo el modelo y, como no,
+va peor que el de antes! 🤣 ahahaha nada, esa es mi vida!
+
+Vuelvo al modelo anterior, pero esta vez reviso un poco los parametros de preprocessing y luego
+lanzo un nuevo entrenamiento, con algunas epocas mas respecto al primero. Venga, a esperar otra vez que termine...
+
+Mientras tanto aprovecho para ver si disminuyendo un poco la velocidad y restringiendo el
+angulo de giro en el simulador consigo arreglar un poco la conduccion de la red. Pero nada,
+no parece que sirva de mucho.. conseguí terminar el circuito pero el coche iba demasiado borracho, la verdad que no va bien eheh 😅
+
+Asi que nada, toca esperar otra vez al training y ver que pasa.
+
+<img height="500" alt="Captura de pantalla 2026-05-08 205045" src="https://github.com/user-attachments/assets/5aafea32-2606-42ea-a36f-bf6a6f88d224" />
+
+
+Por mi sorpresa y alivio, esta vez funciona! Lo pruebo también con los demás circuitos y va bastante bien, que alegria 🥲.
+Despues de tantas pruebas, choques, entrenamientos eternos y peleas con el modelo, por fin parece que el coche ha aprendido algo ahahaha.🎉🎉
+
+Y nada, entonces a entregar. Las clases ya se han acabado, pero aun queda darle caña a unas cuantas prácticas y sobrevivir a los examenes. Suerte!!
