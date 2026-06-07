@@ -1,6 +1,13 @@
 # andrecur-github.io
 Blog de prácticas de Visión Robótica (MUVA 25/26)
 
+## Índice
+- [Práctica 1](#práctica-1)
+- [Práctica 2](#práctica-2)
+- [Práctica 3](#práctica-3)
+- [Práctica 4](#práctica-4)
+- [Revisión P2](#revisión-p2)
+
 # Preparación: Docker y Unibotics
 Domingo 15/02/2026
 
@@ -713,6 +720,8 @@ angulo de giro en el simulador consigo arreglar un poco la conduccion de la red.
 no parece que sirva de mucho.. conseguí terminar el circuito pero el coche iba demasiado borracho, la verdad que no va bien eheh 😅
 
 Asi que nada, toca esperar otra vez al training y ver que pasa.
+
+# Revisión P2
 
 <img height="500" alt="Captura de pantalla 2026-05-08 205045" src="https://github.com/user-attachments/assets/5aafea32-2606-42ea-a36f-bf6a6f88d224" />
 
