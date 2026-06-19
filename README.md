@@ -747,9 +747,9 @@ Por último, refiné la triangulación. Ahora no me quedo ciegamente con cualqui
 Tengo que admitir que después de todos estos cambios, la diferencia se nota bastante. La reconstrucción final tiene mucha más forma, aparecen estructuras reconocibles de la escena y la nube de puntos resulta bastante más coherente que en la primera versión.:
 
 
+https://github.com/user-attachments/assets/981d40b7-e625-483e-840c-3fd92cd2a258
 
 
-https://github.com/user-attachments/assets/df497921-d4fd-4f64-835f-980f0ec7e873
 
 
 
