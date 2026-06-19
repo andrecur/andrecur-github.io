@@ -734,13 +734,13 @@ Y nada, entonces a entregar. Las clases ya se han acabado, pero aun queda darle 
 
 19/06/2026
 
-En la práctica P2 tenía que programar un robot con dos cámaras para reconstruir en 3D una escena a partir de estéreo. La condición importante del enunciado: no puedo asumir un par estéreo canónico. Mi primera entrega, aunque sí hacía retroproyección, al final buscaba las correspondencias básicamente en la misma fila de la imagen derecha, como si el par fuera canónico; así que esto claramente no estaba bien. Además, la triangulación aceptaba puntos sin comprobar si pasaban un umbral, y la nube final de puntos resultó ser muy pobre.
+Recordamos, en la práctica P2 teníamos que programar un robot con dos cámaras para reconstruir una escena en 3D mediante estéreo. La parte importante del enunciado era que no podía asumir un par estéreo canónico. Mi primera entrega, aunque sí hacía retroproyección, al final buscaba las correspondencias en la misma fila de la imagen derecha, como si las cámaras estuvieran perfectamente alineadas. Vamos, que en la práctica seguía dependiendo de una búsqueda horizontal. Y esto claramente no estaba bien. Además, la triangulación aceptaba prácticamente cualquier punto (se me olvidó fijar un umbral de aceptación) y la nube final resultó ser muy pobre y con poca forma.
 
 Después de que el profe me señalara todo esto en revisiones, a partir de ahí tocaba rehacer la práctica.
 
 Revisé diferentes implementaciones leyendome los blogs de los compañeros y decidí replantear el cálculo de la geometría utilizando matrices de proyección construidas a partir de los parámetros intrínsecos y extrínsecos de las cámaras. De ahí, cada punto de interés detectado en la imagen izquierda se retroproyecta al espacio 3D y luego se proyecta sobre la cámara derecha para obtener su línea epipolar correspondiente. De esta forma, la búsqueda de correspondencias ya se realiza siguiendo la geometría real de la escena y no una simple búsqueda por filas, así que la solución ahora es independiente de la orientación relativa entre cámaras.
 
-Luego me centré en refinar el matching, ajustando los criterios de búsqueda y validación de correspondencias para reducir falsos positivos y mejorar la calidad de los puntos utilizados luego en la reconstrucción.
+También mejoré el proceso de matching mediante correlación normalizada (NCC), ajustando los umbrales y limitando la búsqueda a candidatos coherentes con la geometría de la escena. Además, la búsqueda se realiza sobre toda la línea epipolar, evitando perder correspondencias válidas.
 
 Por último, mejoré la fase de triangulación, en la parte del cálculo de la distancia mínima entre los rayos de proyección que llegan de ambas cámaras. Aquí, si esta distancia supera un determinado umbral, el punto se descarta por considerarse correspondencia poco fiable. 
 
