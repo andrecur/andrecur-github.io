@@ -721,7 +721,6 @@ no parece que sirva de mucho.. conseguí terminar el circuito pero el coche iba 
 
 Asi que nada, toca esperar otra vez al training y ver que pasa.
 
-# Revisión P2
 
 <img height="500" alt="Captura de pantalla 2026-05-08 205045" src="https://github.com/user-attachments/assets/5aafea32-2606-42ea-a36f-bf6a6f88d224" />
 
@@ -730,3 +729,27 @@ Por mi sorpresa y alivio, esta vez funciona! Lo pruebo también con los demás c
 Despues de tantas pruebas, choques, entrenamientos eternos y peleas con el modelo, por fin parece que el coche ha aprendido algo ahahaha.🎉🎉
 
 Y nada, entonces a entregar. Las clases ya se han acabado, pero aun queda darle caña a unas cuantas prácticas y sobrevivir a los examenes. Suerte!!
+
+# Revisión P2
+
+19/06/2026
+
+En la práctica P2 tenía que programar un robot con dos cámaras para reconstruir en 3D una escena a partir de estéreo. La condición importante del enunciado: no puedo asumir un par estéreo canónico. Mi primera entrega, aunque sí hacía retroproyección, al final buscaba las correspondencias básicamente en la misma fila de la imagen derecha, como si el par fuera canónico; así que esto claramente no estaba bien. Además, la triangulación aceptaba puntos sin comprobar si pasaban un umbral, y la nube final de puntos resultó ser muy pobre.
+
+Después de que el profe me señalara todo esto en revisiones, a partir de ahí tocaba rehacer la práctica.
+
+Revisé diferentes implementaciones leyendome los blogs de los compañeros y decidí replantear el cálculo de la geometría utilizando matrices de proyección construidas a partir de los parámetros intrínsecos y extrínsecos de las cámaras. De ahí, cada punto de interés detectado en la imagen izquierda se retroproyecta al espacio 3D y luego se proyecta sobre la cámara derecha para obtener su línea epipolar correspondiente. De esta forma, la búsqueda de correspondencias ya se realiza siguiendo la geometría real de la escena y no una simple búsqueda por filas, así que la solución ahora es independiente de la orientación relativa entre cámaras.
+
+Luego me centré en refinar el matching, ajustando los criterios de búsqueda y validación de correspondencias para reducir falsos positivos y mejorar la calidad de los puntos utilizados luego en la reconstrucción.
+
+Por último, mejoré la fase de triangulación, en la parte del cálculo de la distancia mínima entre los rayos de proyección que llegan de ambas cámaras. Aquí, si esta distancia supera un determinado umbral, el punto se descarta por considerarse correspondencia poco fiable. 
+
+Después de estas modificaciones, efectivamente la reconstrucción final presenta una estructura mucho más coherente y reconocible:
+
+
+
+
+https://github.com/user-attachments/assets/df497921-d4fd-4f64-835f-980f0ec7e873
+
+
+
