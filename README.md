@@ -734,17 +734,17 @@ Y nada, entonces a entregar. Las clases ya se han acabado, pero aun queda darle 
 
 19/06/2026
 
-Recordamos, en la práctica P2 teníamos que programar un robot con dos cámaras para reconstruir una escena en 3D mediante estéreo. La parte importante del enunciado era que no podía asumir un par estéreo canónico. Mi primera entrega, aunque sí hacía retroproyección, al final buscaba las correspondencias en la misma fila de la imagen derecha, como si las cámaras estuvieran perfectamente alineadas. Vamos, que en la práctica seguía dependiendo de una búsqueda horizontal. Y esto claramente no estaba bien. Además, la triangulación aceptaba prácticamente cualquier punto (se me olvidó fijar un umbral de aceptación) y la nube final resultó ser muy pobre y con poca forma.
+Recordamos, en la práctica P2 teníamos que programar un robot con dos cámaras para reconstruir una escena en 3D mediante estéreo. La parte importante del enunciado era que NO podía asumir un par estéreo canónico. Mi primera entrega, aunque sí hacía retroproyección, al final buscaba las correspondencias en la misma fila de la imagen derecha, como si las cámaras estuvieran perfectamente alineadas . Vamos, que en la práctica seguía dependiendo de una búsqueda horizontal . Y esto claramente no estaba bien . Además, la triangulación aceptaba prácticamente cualquier punto (se me olvidó fijar un umbral de aceptación) y la nube final resultó ser muy pobre y con poca forma.
 
-Después de que el profe me señalara todo esto en revisiones, a partir de ahí tocaba rehacer la práctica.
+Después de que el profe me señalara todo esto en la revisión, tocaba rehacer buena parte de la práctica.
 
-Revisé diferentes implementaciones leyendome los blogs de los compañeros y decidí replantear el cálculo de la geometría utilizando matrices de proyección construidas a partir de los parámetros intrínsecos y extrínsecos de las cámaras. De ahí, cada punto de interés detectado en la imagen izquierda se retroproyecta al espacio 3D y luego se proyecta sobre la cámara derecha para obtener su línea epipolar correspondiente. De esta forma, la búsqueda de correspondencias ya se realiza siguiendo la geometría real de la escena y no una simple búsqueda por filas, así que la solución ahora es independiente de la orientación relativa entre cámaras.
+Revisando implementaciones de compañeros y peleándome un rato con la geometría, decidí cambiar el enfoque. Construí las matrices de proyección a partir de los parámetros intrínsecos y extrínsecos de las cámaras y empecé a utilizar los rayos 3D para generar correctamente la línea epipolar en la otra imagen. Así, para cada punto detectado en la izquierda, calculo su rayo en el espacio y lo proyecto sobre la cámara derecha para obtener dónde debo buscar realmente la correspondencia.
 
-También mejoré el proceso de matching mediante correlación normalizada (NCC), ajustando los umbrales y limitando la búsqueda a candidatos coherentes con la geometría de la escena. Además, la búsqueda se realiza sobre toda la línea epipolar, evitando perder correspondencias válidas.
+También ajusté bastante la parte de matching. Mejoré los umbrales de la correlación normalizada (NCC), limité la búsqueda a candidatos coherentes con la geometría de la escena y recorrí toda la línea epipolar en lugar de hacer una búsqueda mucho más simplificada. Con esto reducí bastante los emparejamientos raros.
 
-Por último, mejoré la fase de triangulación, en la parte del cálculo de la distancia mínima entre los rayos de proyección que llegan de ambas cámaras. Aquí, si esta distancia supera un determinado umbral, el punto se descarta por considerarse correspondencia poco fiable. 
+Por último, refiné la triangulación. Ahora no me quedo ciegamente con cualquier intersección: calculo la distancia mínima entre los rayos de ambas cámaras y, si es demasiado grande, descarto ese punto porque probablemente venga de una correspondencia incorrecta. 
 
-Después de estas modificaciones, efectivamente la reconstrucción final presenta una estructura mucho más coherente y reconocible:
+Tengo que admitir que después de todos estos cambios, la diferencia se nota bastante. La reconstrucción final tiene mucha más forma, aparecen estructuras reconocibles de la escena y la nube de puntos resulta bastante más coherente que en la primera versión.:
 
 
 
