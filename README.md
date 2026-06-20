@@ -744,7 +744,7 @@ También ajusté bastante la parte de matching. Mejoré los umbrales de la corre
 
 Por último, refiné la triangulación. Ahora no me quedo ciegamente con cualquier intersección: calculo la distancia mínima entre los rayos de ambas cámaras y, si es demasiado grande, descarto ese punto porque probablemente venga de una correspondencia incorrecta. 
 
-Tengo que admitir que después de todos estos cambios, la diferencia se nota bastante. La reconstrucción final tiene mucha más forma, aparecen estructuras reconocibles de la escena y la nube de puntos resulta bastante más coherente que en la primera versión.:
+Tengo que admitir que después de todos estos cambios, la diferencia se nota bastante. La reconstrucción final tiene mucha más forma, aparecen estructuras reconocibles de la escena y la nube de puntos resulta bastante más coherente que en la primera versión:
 
 
 https://github.com/user-attachments/assets/981d40b7-e625-483e-840c-3fd92cd2a258
