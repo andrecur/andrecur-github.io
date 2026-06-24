@@ -7,6 +7,7 @@ Blog de prácticas de Visión Robótica (MUVA 25/26)
 - [Práctica 3](#práctica-3)
 - [Práctica 4](#práctica-4)
 - [Revisión P2](#revisión-p2)
+- [Revisión P3](#revisión-p3)
 
 # Preparación: Docker y Unibotics
 Domingo 15/02/2026
@@ -750,6 +751,27 @@ Tengo que admitir que después de todos estos cambios, la diferencia se nota bas
 https://github.com/user-attachments/assets/981d40b7-e625-483e-840c-3fd92cd2a258
 
 
+# Revisión P3
 
+24/06/2026
+
+Y sí, la práctica 3 también... En la P3 teníamos que localizar una aspiradora dentro de un mapa utilizando balizas distribuidas por la casa. La idea era combinar dos tipos de información: localización visual cuando una baliza estuviera visible y odometría cuando el robot la perdiera de vista.
+
+En mi primera entrega conseguía detectar las balizas y estimar una posición a partir de ellas, pero durante la revisión el profe me señaló unos problemas con esa entrega.. El principal era que, cuando el robot dejaba de ver una baliza, mi código no estaba utilizando correctamente la información de la odometría para seguir actualizando la posición. Además, tampoco estaba seleccionando únicamente la baliza principal, sino que podía utilizar cualquier detección disponible, algo que no era exactamente lo que pedía la práctica..
+
+La parte de seleccionar la baliza más cercana fue relativamente sencilla de corregir. El verdadero dolor de cabeza llegó con la odometría, augh. Intenté arreglarla varias veces y revisar toda la lógica, pero me encontré con un problema añadido: la plataforma parecía tener un fallo y la odometría devolvía valores nulos. Vamos, que estaba intentando depurar una parte del código utilizando unos datos que no funcionaban bien, así que fue bastante complicado saber si el error era mío o de la plataforma.
+
+Aun así, tenía que revisar la práctica y avanzar en arreglar la solución. Así que ya tengo una nueva versión, que guarda la última posición obtenida mediante visión y, cuando el robot pierde de vista las balizas, ya no intenta utilizar una posición global de odometría, sino solo el incremento de movimiento desde la última localización visual válida. Es decir, calcula cuánto se ha desplazado y cuánto ha girado el robot desde ese momento y aplica esos cambios sobre la última pose conocida. Cuando vuelve a ver una baliza, corrige de nuevo la posición utilizando la información visual.
+
+Tengo que admitir que una buena parte del tiempo invertido en esta práctica no fue realmente por el algoritmo, sino por los problemas de la plataforma. Durante unos días (mis días libres) la odometría no funcionaba correctamente y a cada cambio tenía que reiniciar el docker y la plataforma entera... Cada prueba requería bastante paciencia y muchas veces avanzaba prácticamente a ciegas.
+
+Y para rematar la experiencia, todo esto coincidió con una ola de calor bastante importante. Imaginaos: encerrada en mi cuarto, con más de 40 grados fuera, el sol calentando la habitación y el portátil funcionando atope y calentando desde dentro. En estos días avancé más quedándome un rato después del trabajo en la oficina que trabajando en casa. Por lo menos allí no acababa pegada a la silla y a la mesa después de cada cambio de código.
+
+Menos mal que estuve en contacto con el profe durante todo el proceso y finalmente se publicó una actualización de Unibotics que corrigió parte de los problemas de la plataforma. Gracias a eso pude comprobar mejor el comportamiento de la solución y verificar que los cambios realizados iban por el camino correcto. Todavía queda alguna cosa que no me funciona (ahora la terminal deja de conectarse, así que no puedo ver las impresiones del programa para depurar lo que estaá ocurriendo), pero al menos ya la lucha simultanea contra mi código y contra la herramienta parece haberse reducido a una pelea un poco menos cruel..
+
+Aquí dejo el video de la solución:
+
+
+VIDEO
 
 
