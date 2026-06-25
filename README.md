@@ -769,9 +769,26 @@ Y para rematar la experiencia, todo esto coincidió con una ola de calor bastant
 
 Menos mal que estuve en contacto con el profe durante todo el proceso y finalmente se publicó una actualización de Unibotics que corrigió parte de los problemas de la plataforma. Gracias a eso pude comprobar mejor el comportamiento de la solución y verificar que los cambios realizados iban por el camino correcto. Todavía queda alguna cosa que no me funciona (ahora la terminal deja de conectarse, así que no puedo ver las impresiones del programa para depurar lo que estaá ocurriendo), pero al menos ya la lucha simultanea contra mi código y contra la herramienta parece haberse reducido a una pelea un poco menos cruel..
 
-Aquí dejo el video de la solución:
+Aquí dejo unos videos de la solución:
 
 
-VIDEO
+https://github.com/user-attachments/assets/1016e975-19fe-46a7-851f-3735ef2c7769
+
+
+https://github.com/user-attachments/assets/14a90c88-c223-4f96-ab08-63d43d8b8f6a
+
+
+
+https://github.com/user-attachments/assets/1cdf01cd-4e13-43ce-8589-67f26f544424
+
+
+
+
+https://github.com/user-attachments/assets/21a5c538-8136-4ed4-9b93-abaa3ca5e109
+
+
+
+https://github.com/user-attachments/assets/3a155829-8bdc-4e4b-bb93-3fe9400f8e58
+
 
 
